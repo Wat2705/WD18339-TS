@@ -1,21 +1,21 @@
 import { useEffect, useState } from 'react'
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { TProduct } from '@/interfaces/TProduct'
 
 
 const ProductDetail = () => {
-  const location = useLocation();
+  const params = useParams();
 
   const [product, setProduct] = useState<TProduct>()
 
   useEffect(() => {
     (async () => {
-      const res = await fetch(`http://localhost:3000/products/${location.state.id}`)
+      const res = await fetch(`http://localhost:3000/products/${params.id}`)
       const data = await res.json()
       setProduct(data);
       console.log(data)
     })()
-  }, []); 
+  }, []);
 
   return (
     <div>

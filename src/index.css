@@ -13,3 +13,7 @@
 .active{
   color: red;
 }
+
+#bodyPart{
+  min-height: 80vh;
+}

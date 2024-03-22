@@ -4,13 +4,13 @@ import { TProduct } from '@/interfaces/TProduct'
 
 
 const ProductDetail = () => {
-  const params = useParams();
+  const { id } = useParams();
 
-  const [product, setProduct] = useState<TProduct>()
+  const [product, setProduct] = useState<TProduct | null>(null)
 
   useEffect(() => {
     (async () => {
-      const res = await fetch(`http://localhost:3000/products/${params.id}`)
+      const res = await fetch(`http://localhost:3000/products/${id}`)
       const data = await res.json()
       setProduct(data);
       console.log(data)

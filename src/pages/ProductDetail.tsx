@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
 import { TProduct } from '@/interfaces/TProduct'
 
-
 const ProductDetail = () => {
   const { id } = useParams();
 
